@@ -1,0 +1,15 @@
+<template>
+  <section class="au-animate">
+    <h2>${heading}</h2>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default au-animate" repeat.for="routeWrapper of routes">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#route-${routeWrapper.route_type}">
+          <h4 class="panel-title">${routeWrapper.mode_name}</h4>
+        </div>
+        <div id="route-${routeWrapper.route_type}" class="panel-collapse collapse list-group">
+          <a class="list-group-item" repeat.for="route of routeWrapper.route" href="#stops?route=${route.route_id}">${route.route_name}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
